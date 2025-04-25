@@ -17,7 +17,7 @@ my_posts = [
         ]
 
 def find_index_post(id):
-    for index, post in enumerate(posts):
+    for index, post in enumerate(updatepost):
         if post['id'] == id:
             return index
 
