@@ -25,4 +25,5 @@ def get_posts():
 @app.post("/createposts")
 def create_posts(new_post: post):
         print(new_post)
-            return {"data": "new post"}
+        return {"data": "new post"}
+            
