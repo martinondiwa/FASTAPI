@@ -44,7 +44,13 @@ def get_posts():
                 #return {"data": "new post"}
 
 #working with rating
+#@app.post("/createposts")
+#def create_posts(new_post: post): #   print(new_post.published)
+#  return {"data": "new post"}
+
+#pydantic modal storage capabilities 
 @app.post("/createposts")
 def create_posts(new_post: post):
-    print(new_post.published)
+    print(new_post)
+    print(new_post.dict())
     return {"data": "new post"}
