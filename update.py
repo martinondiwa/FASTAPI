@@ -18,5 +18,12 @@ my_posts = [
 
 @app.put("/posts/{id}")
 def update_post(id: int, post: updatepost):
-    print(updatepost)
-    return {'message': "updated post"}
+    index = find_index_post(id)
+
+    if index == None:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND,
+                            detail=f"post with id: {id} does not exist")
+        post_dict = updatepost.dict()
+        post_dict['id'] = id
+        my_posts[index] = post_dict
+        return {'message': "updated post"}
