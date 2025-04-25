@@ -49,7 +49,14 @@ def get_posts():
 #  return {"data": "new post"}
 
 #pydantic modal storage capabilities 
-@app.post("/createposts")
+#@app.post("/createposts")
+#def create_posts(new_post: post):
+ #   print(new_post)
+  #  print(new_post.dict())
+   # return {"data": new_post}
+
+#following best practices (the paths should be ("/posts" , "/posts:id" , always in plural) with methods like (@app.post("/posts"), @app.get("/posts/{id}"),@app.get("/posts"), @app.put("/posts/{id}"), @app.delete("/posts/{id}")
+@app.post("/posts")
 def create_posts(new_post: post):
     print(new_post)
     print(new_post.dict())
