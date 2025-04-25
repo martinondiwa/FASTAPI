@@ -26,4 +26,4 @@ def update_post(id: int, post: updatepost):
         post_dict = updatepost.dict()
         post_dict['id'] = id
         my_posts[index] = post_dict
-        return {'message': "updated post"}
+        return {"data": post_dict}
