@@ -25,9 +25,12 @@ def find_index_post(id):
 def update_post(id: int, post: updatepost):
     index = find_index_post(id)
 
-    if index == None:
-        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND,
-                            detail=f"post with id: {id} does not exist")
+    if index is None:
+        raise HTTPException(
+                status_code=status.HTTP_404_NOT_FOUND,
+                detail=f"Post with id: {id} does not exist"
+                )
+
         post_dict = updatepost.dict()
         post_dict['id'] = id
         my_posts[index] = post_dict
