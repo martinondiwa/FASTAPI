@@ -1,4 +1,4 @@
-from fastapi import FastAPI, Response, Status
+from fastapi import FastAPI, Response, status
 from fastapi.params import Body
 from pydantic import BaseModel
 from typing import Optional
