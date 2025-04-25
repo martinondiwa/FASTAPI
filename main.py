@@ -14,6 +14,11 @@ class post(BaseModel):
 #Creating a storage for my posts
 my_posts = [{"title": "title of post", "content": "content of post 1", "id": 1}, {"title": "favourite foods", "content": "I like pizza", "id": 2}]
 
+#Keep in mind this is not the best way of retrieving posts. (works with yX)
+def find_post(id):
+    for p in my_posts:
+        if p["id"] == id:
+            return p
 
 @app.get("/")
 async def root():
@@ -76,7 +81,15 @@ def create_posts(post: post):
 
 
 #Retrieving one individual post. 
+#@app.get("/posts/{id}")
+#def get_post(id):
+ #   print(id)
+  #  return {"post_detail": f"Here is post {id}"}
+
+#works with yx usable though not best practice
 @app.get("/posts/{id}")
 def get_post(id):
     print(id)
-    return {"post_detail": f"Here is post {id}"}
+    post = find_post(id)
+    print(post)
+    return {"post_detail": post}
