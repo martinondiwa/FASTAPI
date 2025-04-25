@@ -78,5 +78,5 @@ def create_posts(post: post):
 #Retrieving one individual post. 
 @app.get("/posts/{id}")
 def get_post(id):
-    print{id}
+    print(id)
     return {"post_detail": f"Here is post {id}"}
