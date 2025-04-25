@@ -102,11 +102,20 @@ def create_posts(post: post):
   #  print(post)
    # return {"post_detail": post}
 
-#manipulating the  error response
+#manipulating the  error response- (script when only response is imported)
+#@app.get("/posts/{id}")
+#def get_post(id: int, response:Response):
+    
+ #   post = find_post(int(id))
+  #  if not post:
+   #     response.status_code = 404
+   # return {"post_detail": post}
+
+#error script when status is imported
 @app.get("/posts/{id}")
 def get_post(id: int, response:Response):
-    
+
     post = find_post(int(id))
     if not post:
-        response.status_code = 404
+        response.status_code = status.HTTP_404_NOT_FOUND
     return {"post_detail": post}
