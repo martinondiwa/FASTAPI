@@ -14,14 +14,6 @@ def find_index_post(id: int):
         if p ['id'] == id:
             return i
 
-#@app.get("/posts/{id}")
-#def get_post(id: int):
-
- #   post = find_post(id)
-  #  if not post:
-   #     raise HTTPException(status_code=status.HTTP_204_NO_CONTENT)
-                    
-
 @app.delete("/posts/{id}", status_code=status.HTTP_204_NO_CONTENT)
 def delete_post(id: int):
     #deleting post
