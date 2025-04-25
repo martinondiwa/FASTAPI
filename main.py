@@ -11,6 +11,9 @@ class post(BaseModel):
     content: str
     published : bool = True
     rating: Optional[int] = None
+#Creating a storage for my posts
+my_posts = [{"title": "title of post", "content": "content of post 1", "id": 1}, {"title": "favourite foods", "content": "I like pizza", "id": 2}]
+
 
 @app.get("/")
 async def root():
