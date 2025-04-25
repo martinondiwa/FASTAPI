@@ -7,6 +7,7 @@ app = FastAPI()
 class post(BaseModel):
     title: str
     content: str
+    published : bool=True
 
 @app.get("/")
 async def root():
@@ -28,8 +29,13 @@ def get_posts():
  #       return {"data": "new post"}
 
 # title str, content str (Extracting the Title Only)
+#@app.post("/createposts")
+#def create_posts(new_post: post):
+#           print(new_post.title)
+#          return {"data": "new post"}
+
+#Asigning optional property title str, content str (Extracting the Title Only)
 @app.post("/createposts")
 def create_posts(new_post: post):
-            print(new_post.title)
-            return {"data": "new post"}
-            
+                print(new_post.published)
+                            return {"data": "new post"}
