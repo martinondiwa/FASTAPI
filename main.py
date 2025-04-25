@@ -91,6 +91,6 @@ def create_posts(post: post):
 def get_post(id: int):
    # print(type(id)) -(used to check the type of id)
 
-    post = find_post(int(id))
+    post = find_post(id)
     print(post)
     return {"post_detail": post}
