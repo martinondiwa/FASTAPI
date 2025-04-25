@@ -16,13 +16,13 @@ my_posts = [
         {"id": 2, "title": "Post Two", "content": "This is post two"},
         ]
 
-def find_index_post(id):
-    for index, post in enumerate(my_posts):
-        if post['id'] == id:
-            return index
+#def find_index_post(id):
+ #   for index, post in enumerate(my_posts):
+  #      if post['id'] == id:
+   #         return index
 
 @app.put("/posts/{id}")
-def update_post(id: int, post: updatepost):
+def update_post(id: int, post: UpdatePost):
     index = find_index_post(id)
 
     if index is None:
