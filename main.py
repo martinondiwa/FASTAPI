@@ -21,9 +21,15 @@ def get_posts():
  #   print(payLoad)
   #  return {"new_post": f"title {payLoad['title']} content: {payLoad['content']}"}
 
-# title str, content str 
+# title str, content str (General)
+#@app.post("/createposts")
+#def create_posts(new_post: post):
+ #       print(new_post)
+ #       return {"data": "new post"}
+
+# title str, content str (Extracting the Title Only)
 @app.post("/createposts")
-def create_posts(new_post: post):
-        print(new_post)
-        return {"data": "new post"}
+def create_posts(new_post.post):
+            print(new_post.title)
+            return {"data": "new post"}
             
