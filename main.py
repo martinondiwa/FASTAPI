@@ -1,4 +1,4 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Response, Status
 from fastapi.params import Body
 from pydantic import BaseModel
 from typing import Optional
@@ -94,10 +94,19 @@ def create_posts(post: post):
 
 
 #works with yx usable though not best practice
-@app.get("/posts/{id}")
-def get_post(id: int):
+#@app.get("/posts/{id}")
+#def get_post(id: int):
    # print(type(id)) -(used to check the type of id)
 
-    post = find_post(int(id))
-    print(post)
+ #   post = find_post(int(id))
+  #  print(post)
+   # return {"post_detail": post}
+
+#manipulating the  error response
+@app.get("/posts/{id}")
+def get_post(id: int, response:Response):
+    
+    post = find_post(id)
+    if not post:
+        response.status_code = 404
     return {"post_detail": post}
