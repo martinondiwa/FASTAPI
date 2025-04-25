@@ -88,8 +88,9 @@ def create_posts(post: post):
 
 #works with yx usable though not best practice
 @app.get("/posts/{id}")
-def get_post(id):
+def get_post(id: int):
    # print(type(id)) -(used to check the type of id)
+
     post = find_post(int(id))
     print(post)
     return {"post_detail": post}
