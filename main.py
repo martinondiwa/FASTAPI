@@ -12,4 +12,4 @@ def root():
 @app.get("/posts/vote") '''specifies a different path'''
 def root():
     
-    return()
+    return {"Get your voote"}
