@@ -53,4 +53,4 @@ def get_posts():
 def create_posts(new_post: post):
     print(new_post)
     print(new_post.dict())
-    return {"data": new post}
+    return {"data": new_post}
