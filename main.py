@@ -84,7 +84,14 @@ def create_posts(post: post):
 #@app.get("/posts/{id}")
 #def get_post(id):
  #   print(id)
-  #  return {"post_detail": f"Here is post {id}"}
+#  return {"post_detail": f"Here is post {id}"}
+
+#Getting the latest post
+@app.get("/posts/latest")
+def get_latest_post():
+    post = my_posts[len(my_posts)-1]
+    return {"detail": post}
+
 
 #works with yx usable though not best practice
 @app.get("/posts/{id}")
@@ -94,9 +101,3 @@ def get_post(id: int):
     post = find_post(int(id))
     print(post)
     return {"post_detail": post}
-
-#Getting the latest post
-@app.get("/posts/latest")
-def get_latest_post():
-    post = my_posts[len(my_posts)-1]
-    return {"detail": post}
