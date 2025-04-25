@@ -94,13 +94,13 @@ def create_posts(post: post):
 
 
 #works with yx usable though not best practice
-@app.get("/posts/{id}")
-def get_post(id: int):
+#@app.get("/posts/{id}")
+#def get_post(id: int):
    # print(type(id)) -(used to check the type of id)
 
-    post = find_post(int(id))
-    print(post)
-    return {"post_detail": post}
+   # post = find_post(int(id))
+   # print(post)
+    #return {"post_detail": post}
 
 #manipulating the  error response- (script when only response is imported)
 #@app.get("/posts/{id}")
@@ -123,7 +123,7 @@ def get_post(id: int):
 
 #passing an error using HTTPException
 @app.get("/posts/{id}")
-def get_post(id: int, response:Response):
+def get_post(id: int, response: Response):
     
     post = find_post((id))
     if not post:
