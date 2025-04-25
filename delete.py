@@ -1,4 +1,3 @@
-
 from fastapi import FastAPI
 
 app = FastAPI()
@@ -10,7 +9,7 @@ def find_index_post(id):
             return i
 
 @app.delete("/posts/{id}")
-def delete_post():
+def delete_post(id: int):
     #deleting post
     # find the index in the array that has required ID
     #my_posts.pop(index)
