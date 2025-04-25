@@ -19,4 +19,4 @@ my_posts = [
 @app.put("/posts/{id}")
 def update_post(id: int, post: updatepost):
     print(updatedpost)
-    return {'message': "updated post")
+    return {'message': "updated post"}
