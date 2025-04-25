@@ -22,7 +22,7 @@ my_posts = [
    #         return index
 
 @app.put("/posts/{id}")
-def update_post(id: int, post: UpdatePost):
+def update_post(id: int, post: pdatepost):
     index = find_index_post(id)
 
     if index is None:
