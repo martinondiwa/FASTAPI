@@ -5,7 +5,7 @@ from typing import Optional
 
 app = FastAPI()
 
-class post(BaseModel):
+class updatepost(BaseModel):
     title: str
     content: str
     published : bool = True
@@ -15,3 +15,8 @@ my_posts = [
         {"id": 1, "title": "Post One", "content": "This is post one"},
         {"id": 2, "title": "Post Two", "content": "This is post two"},
         ]
+
+@app.put("/posts/{id}")
+def update_post{id: int, post: updatepost):
+    print(updatedpost)
+    return {'message': "updated post")
