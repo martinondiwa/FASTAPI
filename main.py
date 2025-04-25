@@ -71,5 +71,5 @@ def get_posts():
 def create_posts(post: post):
     post_dict = post.dict()
     post_dict['id'] = randrange(0,1000000)
-    my_posts.append()
+    my_posts.append(post_dict)
     return {"data": post_dict}
