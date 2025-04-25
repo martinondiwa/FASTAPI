@@ -29,7 +29,7 @@ def get_posts():
 
 # title str, content str (Extracting the Title Only)
 @app.post("/createposts")
-def create_posts(new_post.post):
+def create_posts(new_post: post):
             print(new_post.title)
             return {"data": "new post"}
             
