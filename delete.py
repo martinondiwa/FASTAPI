@@ -1,5 +1,5 @@
-from main import app
-from fastapi import FastAPI, Request, HTTPException
+from fastapi import FastAPI, Request, HTTPException, status
+from typing import List
 
 app = FastAPI()
 
