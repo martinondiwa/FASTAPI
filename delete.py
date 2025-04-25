@@ -5,7 +5,7 @@ app = FastAPI()
 
 #Deleting posts
 def find_index_post(id):
-    for i, p in enumarate (my_posts):
+    for i, p in enumarate(my_posts):
         if p ['id'] == id:
             return i
 
