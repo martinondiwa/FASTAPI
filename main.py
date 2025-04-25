@@ -72,7 +72,7 @@ def get_posts():
 
 
 #Communicating with the frontend
-@app.post("/posts")
+@app.post("/posts", status_code=status.HTTP_201_CREATED)
 def create_posts(post: post):
     post_dict = post.dict()
     post_dict['id'] = randrange(0,1000000)
