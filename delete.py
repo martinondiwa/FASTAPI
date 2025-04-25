@@ -20,6 +20,10 @@ def delete_post(id: int):
     # find the index in the array that has required ID
     #my_posts.pop(index)
     index = find_index_post(id)
+    
+    #handling errors due to non-existense ids
+    if index == None:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"post with id: {id} does not exist")
 
     my_posts.pop(index)
 
