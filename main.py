@@ -21,7 +21,7 @@ async def root():
 
 @app.get("/posts")
 def get_posts():
-    return{"data": "This is your posts"}
+    return{"data": my_posts}
 
 #@app.post("/createposts")
 #def create_posts(payLoad: dict = Body(...)):
