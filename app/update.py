@@ -3,6 +3,7 @@ from typing import Optional
 from pydantic import BaseModel
 import psycopg2
 from psycopg2.extras import RealDictCursor
+import time
 
 app = FastAPI()
 
@@ -21,6 +22,7 @@ While True:
     except Exception as error:
         print("Connecting to database failed")
         print("Error:", error)
+        time.sleep(2)
 
 
 '''try:
