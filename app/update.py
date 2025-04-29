@@ -17,6 +17,7 @@ While True:
         conn = psycopg2.connect(host='localhost', database='fastapi', user='postgres', password='Raila123', cursor_factory=RealDictCursor)
         cursor = conn.cursor()
         print("Database connection was successful!")
+        break
     except Exception as error:
         print("Connecting to database failed")
         print("Error:", error)
