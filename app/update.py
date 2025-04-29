@@ -12,13 +12,23 @@ class updatepost(BaseModel):
     published: bool = True
     rating: Optional[int] = None
 
-try:
+While True:
+    try:
+        conn = psycopg2.connect(host='localhost', database='fastapi', user='postgres', password='Raila123', cursor_factory=RealDictCursor)
+        cursor = conn.cursor()
+        print("Database connection was successful!")
+    except Exception as error:
+        print("Connecting to database failed")
+        print("Error:", error)
+
+
+'''try:
     conn = psycopg2.connect(host='localhost', database = 'fastapi', user = 'postgres', password = '#7014martinSURE', cursor_factory = RealDictCursor)
     cursor = conn.cursor()
     print ("Database connection was successful!")
 except Exception as error:
     print("Connecting to database failed")
-    print("Error:", error)
+    print("Error:", error)'''
 my_posts = [
     {"id": 1, "title": "Post One", "content": "This is post one"},
     {"id": 2, "title": "Post Two", "content": "This is post two"},
