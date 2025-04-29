@@ -1,6 +1,8 @@
 from fastapi import FastAPI, HTTPException, status
 from typing import Optional
 from pydantic import BaseModel
+import psycopg2
+from psycopg2.extras import RealDictCursor
 
 app = FastAPI()
 
@@ -9,6 +11,9 @@ class updatepost(BaseModel):
     content: str
     published: bool = True
     rating: Optional[int] = None
+
+try:
+    conn = psycopg2.connect(host='localhost', database = 'fastapi', user = 'postgres', password = '#7014martinSURE', cursor_factory = RealDictCursor)
 
 my_posts = [
     {"id": 1, "title": "Post One", "content": "This is post one"},
