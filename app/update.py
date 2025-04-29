@@ -42,6 +42,12 @@ def find_index_post(id):
         if post['id'] == id:
             return index
 
+
+@app.get("/posts")
+def get_posts():
+   posts = cursor.execute("""SELECT * FROM posts """)
+    return{"data": my_posts}
+
 @app.get("/")
 def read_root():
     return {"message": "Hello, FastAPI is working!"}
