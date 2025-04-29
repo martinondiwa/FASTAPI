@@ -17,7 +17,8 @@ try:
     cursor = conn.cursor()
     print ("Database connection was successful!")
 except Exception as error:
-    print 
+    print("Connecting to database failed")
+    print("Error:", error)
 my_posts = [
     {"id": 1, "title": "Post One", "content": "This is post one"},
     {"id": 2, "title": "Post Two", "content": "This is post two"},
